@@ -33,9 +33,6 @@ When prompted for environment variables, provide:
 - Lovable auto-links a Supabase project — set the secrets there
 - After adding environment variables, **refresh the page** for them to take effect
 
-**v0 (Vercel):**
-- For the Next.js variant, see [vibe-code-v0](https://github.com/AgoraIO-Conversational-AI/vibe-code-v0)
-
 <!-- PLATFORM_TIPS_END -->
 
 ## Run Locally
