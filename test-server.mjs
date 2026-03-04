@@ -176,10 +176,11 @@ async function handleStartAgent(req, res) {
     properties: {
       channel, token: agentToken || APP_ID, agent_rtc_uid: AGENT_UID, agent_rtm_uid: agentRtmUid,
       remote_rtc_uids: ["*"], enable_string_uid: false, idle_timeout: 120,
-      advanced_features: { enable_bhvs: true, enable_rtm: true, enable_aivad: true, enable_sal: true },
+      advanced_features: { enable_rtm: true },
       llm: { url: LLM_URL, api_key: LLM_API_KEY, system_messages: [{ role: "system", content: prompt }], greeting_message: greeting, failure_message: "Sorry, something went wrong", max_history: 32, params: { model: LLM_MODEL }, style: "openai" },
-      vad: { silence_duration_ms: 300 }, asr: { vendor: "ares", language: "en-US" }, tts: ttsConfig,
-      parameters: { transcript: { enable: true, protocol_version: "v2", enable_words: false } },
+      asr: { vendor: "ares", language: "en-US" }, tts: ttsConfig,
+      parameters: { enable_dump: true, transcript: { enable: true, protocol_version: "v2", enable_words: false } },
+      turn_detection: { config: { end_of_speech: { mode: "semantic" } } },
     },
   };
 
